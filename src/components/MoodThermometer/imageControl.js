@@ -25,7 +25,7 @@ export const ClockBox = styled.div`
   width: 300px;
   height: 130px;
   margin-bottom: 150px;
-  margin-top: 120px;
+  margin-top: 20px;
   background-color: ${props => props.propsMedium ? '#BC96E6' : (props.propsLeft ? '#FFCC33' : '#2E406F')};
   animation: ${props => props.propsMedium ? 'unset' : (props.propsLeft ? changeBackground('BC96E6', 'FFCC33') : changeBackground('BC96E6', '2E406F'))} 2.5s forwards;
   display: flex;
@@ -40,7 +40,7 @@ export const ClockBox = styled.div`
       width: 100px;
       margin-bottom: 0px;
       height: 0px;
-      margin-top: 620px;
+      margin-top: 450px;
       margin-left: 20px;
       
     }

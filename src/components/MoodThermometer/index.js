@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
+import axios from 'axios';
 
 import data from './mood.json'
 
@@ -30,17 +31,49 @@ function MoodThermomether() {
   const [changeMood, setChangeMood] = useState(false)
   const [myPassword, setMypassword] = useState('')
 
+
+  useEffect(() => {
+    async function getData() {
+      const URL = 'https://moderreact.herokuapp.com/states';
+      const response = await fetch(URL);
+      const data = await response.json();
+      setMood(data[0].happy)
+      setMediumMood(data[0].medium)
+    }
+    getData()
+  }, [])
+
+
   function checkPass() {
     if (myPassword === 'mellumHappy') {
-      setMood(true)
-      setMediumMood(false)
+      axios.put('https://moderreact.herokuapp.com/states/1', {
+        id: 1,
+        happy: true,
+        medium: false
+      }).then(resp => {
+        setMood(resp.data.happy)
+        setMediumMood(resp.data.medium)
+      })
     }
     if (myPassword === 'mellumMedium') {
-      setMediumMood(true)
+      axios.put('https://moderreact.herokuapp.com/states/1', {
+        id: 1,
+        happy: false,
+        medium: true
+      }).then(resp => {
+        setMood(resp.data.happy)
+        setMediumMood(resp.data.medium)
+      })
     }
     if (myPassword === 'mellumSad') {
-      setMood(false)
-      setMediumMood(false)
+      axios.put('https://moderreact.herokuapp.com/states/1', {
+        id: 1,
+        happy: false,
+        medium: false
+      }).then(resp => {
+        setMood(resp.data.happy)
+        setMediumMood(resp.data.medium)
+      })
     }
   }
 

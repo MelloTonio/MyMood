@@ -4,7 +4,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom'
 
 import './index.css';
 import MoodThermometer from './components/MoodThermometer';
-import ControlPanel from './components/ControlPanel'
+
 
 
 ReactDOM.render(
@@ -13,7 +13,6 @@ ReactDOM.render(
     <BrowserRouter>
       <Switch>
         <Route path="/" component={MoodThermometer} exact />
-        <Route path="/control" component={ControlPanel} functionControl={''} />
       </Switch>
     </BrowserRouter>
   </div>,

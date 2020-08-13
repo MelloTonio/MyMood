@@ -2,14 +2,12 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import axios from 'axios';
 
-import data from './mood.json'
-
 import { ImageControl, Image, FakeBody, ClockBox, Button, ButtonChange } from './imageControl'
 
 function MoodThermomether() {
 
-  const [mood, setMood] = useState(data.mood)
-  const [mediumMood, setMediumMood] = useState(data.medium)
+  const [mood, setMood] = useState(null)
+  const [mediumMood, setMediumMood] = useState(null)
 
   let newDate = new Date()
   let happyMood = mood

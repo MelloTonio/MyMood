@@ -101,9 +101,10 @@ function MoodThermomether() {
         <div className="humor-percent">
           <div className="slider">
             <div className="ball"></div>
-            <ImageControl goToLeft={param} goToRight={param} propsLeft={happyMood} propsMedium={medium}>
+            {(mood) !== null ? (<ImageControl goToLeft={param} goToRight={param} propsLeft={happyMood} propsMedium={medium}>
               <Image src={image} />
-            </ImageControl>
+            </ImageControl>) : <div>Carregando</div>}
+
             <div className="ball"></div>
           </div>
         </div>

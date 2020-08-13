@@ -63,8 +63,7 @@ export const FakeBody = styled.div`
 export const ImageControl = styled.div`
 margin-left: 0;
 margin-bottom: 80px;
-animation: ${ props => props.propsLeft ? GoAhead(-400, 0) : GoAhead(400, 0)} 3s forwards;
-margin-left: ${ props => `${props.goToLeft}px`};
+animation: ${ props => props.propsMedium ? GoAhead(400, 0) : (props.propsLeft ? GoAhead(0, 400) : GoAhead(0, -400))} 3s forwards;
 
 @media(max-width: 800px){
       animation: ${ props => props.propsMedium ? GoAhead(-125, 0) : (props.propsLeft ? GoAhead(0, 125) : GoAhead(0, -125))} 2s forwards;

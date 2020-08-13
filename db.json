@@ -1,19 +1,18 @@
 {
-    "posts": [
+    "states": [
         {
             "id": 1,
-            "title": "json-server",
-            "author": "typicode"
-        }
-    ],
-    "comments": [
+            "happy": true,
+            "medium": false
+        },
         {
-            "id": 1,
-            "body": "some comment",
-            "postId": 1
+            "id": 2,
+            "happy": false,
+            "medium": false
+        },
+        {
+            "id": 3,
+            "medium": true
         }
-    ],
-    "profile": {
-        "name": "typicode"
-    }
+    ]
 }
